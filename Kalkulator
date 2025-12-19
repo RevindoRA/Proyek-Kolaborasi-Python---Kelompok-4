@@ -51,3 +51,60 @@
     def clear_calc(self):
         self.expression = ""
         self.calc_display.set("")
+
+    def create_temperature_converter(self):
+        frame = ttk.Frame(self.temp_tab, padding=20)
+        frame.pack(fill="both", expand=True)
+
+        ttk.Label(frame, text="Nilai Suhu", font=("Arial", 12)).pack(pady=5)
+        self.temp_value = tk.StringVar()
+        ttk.Entry(frame, textvariable=self.temp_value).pack(pady=5)
+
+        ttk.Label(frame, text="Dari", font=("Arial", 12)).pack(pady=5)
+        self.from_unit = tk.StringVar(value="Celcius")
+        ttk.Combobox(
+            frame,
+            textvariable=self.from_unit,
+            values=["Celcius", "Fahrenheit", "Kelvin"],
+            state="readonly"
+        ).pack(pady=5)
+
+        ttk.Label(frame, text="Ke", font=("Arial", 12)).pack(pady=5)
+        self.to_unit = tk.StringVar(value="Fahrenheit")
+        ttk.Combobox(
+            frame,
+            textvariable=self.to_unit,
+            values=["Celcius", "Fahrenheit", "Kelvin"],
+            state="readonly"
+        ).pack(pady=5)
+
+        ttk.Button(frame, text="Konversi", command=self.convert_temperature).pack(pady=10)
+
+        self.temp_result = tk.StringVar()
+        ttk.Label(frame, textvariable=self.temp_result, font=("Arial", 14)).pack(pady=10)
+
+    def convert_temperature(self):
+        try:
+            value = float(self.temp_value.get())
+            from_u = self.from_unit.get()
+            to_u = self.to_unit.get()
+
+            if from_u == "Fahrenheit":
+                c = (value - 32) * 5 / 9
+            elif from_u == "Kelvin":
+                c = value - 273.15
+            else:
+                c = value
+
+            if to_u == "Fahrenheit":
+                result = (c * 9 / 5) + 32
+            elif to_u == "Kelvin":
+                result = c + 273.15
+            else:
+                result = c
+
+            self.temp_result.set(f"Hasil: {result:.2f} {to_u}")
+
+        except ValueError:
+            messagebox.showerror("Error", "Masukkan angka yang valid")
+
