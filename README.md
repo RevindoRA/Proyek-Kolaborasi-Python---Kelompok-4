@@ -64,6 +64,16 @@ flowchart TD
     I -- Tidak --> J([End])
 ```
 
+### Struktur Program
+MultiApp : Class utama aplikasi
+create_tabs() : Membuat tab fitur
+create_calculator() : Kalkulator
+create_currency_converter() : Konversi mata uang
+create_height_converter() : Konversi tinggi badan
+create_temperature_converter() : Konversi suhu
+create_speed_converter() : Konversi kecepatan
+Struktur dibuat modular agar mudah dikembangkan di masa depan.
+
 ### Penjelasan Flowchart
 
 Flowchart ini menjelaskan alur kerja utama aplikasi Proyek Kolaborasi Python. Program dimulai saat pengguna menjalankan aplikasi melalui terminal. Sistem kemudian melakukan inisialisasi aplikasi dan menyiapkan tampilan utama berupa window dan beberapa tab fitur.
