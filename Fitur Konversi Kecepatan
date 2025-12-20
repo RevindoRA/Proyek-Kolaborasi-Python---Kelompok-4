@@ -1,0 +1,33 @@
+    # =======================
+    # KONVERSI KECEPATAN
+    # =======================
+    def create_speed_converter(self):
+        frame = ttk.Frame(self.speed_tab, padding=20)
+        frame.pack(fill="both", expand=True)
+
+        ttk.Label(frame, text="Nilai Kecepatan").pack(pady=5)
+        self.speed_value = tk.StringVar()
+        ttk.Entry(frame, textvariable=self.speed_value).pack(pady=5)
+
+        ttk.Label(frame, text="Dari").pack(pady=5)
+        self.speed_from = tk.StringVar(value="km/jam")
+        ttk.Combobox(
+            frame,
+            textvariable=self.speed_from,
+            values=["km/jam", "m/s", "mph"],
+            state="readonly"
+        ).pack(pady=5)
+
+        ttk.Label(frame, text="Ke").pack(pady=5)
+        self.speed_to = tk.StringVar(value="m/s")
+        ttk.Combobox(
+            frame,
+            textvariable=self.speed_to,
+            values=["km/jam", "m/s", "mph"],
+            state="readonly"
+        ).pack(pady=5)
+
+        ttk.Button(frame, text="Konversi", command=self.convert_speed).pack(pady=10)
+
+        self.speed_result = tk.StringVar()
+        ttk.Label(frame, textvariable=self.speed_result, font=("Arial", 12)).pack(pady=10)
