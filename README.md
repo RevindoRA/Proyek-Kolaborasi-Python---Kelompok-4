@@ -65,13 +65,13 @@ flowchart TD
 ```
 
 ### Struktur Program
-MultiApp : Class utama aplikasi
-create_tabs() : Membuat tab fitur
-create_calculator() : Kalkulator
-create_currency_converter() : Konversi mata uang
-create_height_converter() : Konversi tinggi badan
-create_temperature_converter() : Konversi suhu
-create_speed_converter() : Konversi kecepatan
+-MultiApp : Class utama aplikasi
+-create_tabs() : Membuat tab fitur
+-create_calculator() : Kalkulator
+-create_currency_converter() : Konversi mata uang
+-create_height_converter() : Konversi tinggi badan
+-create_temperature_converter() : Konversi suhu
+-create_speed_converter() : Konversi kecepatan
 Struktur dibuat modular agar mudah dikembangkan di masa depan.
 
 ### Penjelasan Flowchart
