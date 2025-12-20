@@ -1,4 +1,41 @@
- def create_calculator(self):
+import tkinter as tk
+from tkinter import ttk, messagebox
+
+
+class MultiApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Aplikasi Serba Guna")
+        self.geometry("400x500")
+        self.resizable(False, False)
+
+        self.create_tabs()
+
+    def create_tabs(self):
+        notebook = ttk.Notebook(self)
+        notebook.pack(fill="both", expand=True)
+
+        # Tab
+        self.calc_tab = ttk.Frame(notebook)
+        self.currency_tab = ttk.Frame(notebook)
+        self.height_tab = ttk.Frame(notebook)
+        self.temp_tab = ttk.Frame(notebook)
+        self.speed_tab = ttk.Frame(notebook)
+
+        notebook.add(self.calc_tab, text="Kalkulator")
+        notebook.add(self.currency_tab, text="Mata Uang")
+        notebook.add(self.height_tab, text="Tinggi Badan")
+        notebook.add(self.temp_tab, text="Suhu")
+        notebook.add(self.speed_tab, text="Kecepatan")
+
+        self.create_calculator()
+        self.create_currency_converter()
+        self.create_height_converter()
+        self.create_temperature_converter()
+        self.create_speed_converter()
+
+    def create_calculator(self):
         self.expression = ""
         self.calc_display = tk.StringVar()
 
@@ -164,3 +201,7 @@
         except ValueError:
             messagebox.showerror("Error", "Masukkan angka yang valid")
 
+
+if __name__ == "__main__":
+    app = MultiApp()
+    app.mainloop()
