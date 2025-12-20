@@ -1,8 +1,8 @@
 # Proyek-Kolaborasi-Python---Kelompok-4
 
-## 📊 Dokumentasi Teknis – Flowchart Sistem
+## Dokumentasi Teknis – Flowchart Sistem
 
-## Diagram Flowchart
+### Diagram Flowchart
 
 ```mermaid
 flowchart TD
@@ -16,7 +16,7 @@ flowchart TD
     H --> I{Lanjut menggunakan aplikasi?}
     I -- Ya --> E
     I -- Tidak --> J([End])
-
+```
 
 ### Penjelasan Flowchart
 
