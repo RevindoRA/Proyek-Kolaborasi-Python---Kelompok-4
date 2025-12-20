@@ -4,7 +4,7 @@
 
 ### Diagram Flowchart
 
-### Judul Program
+### JUDUL PROGRAM
 Aplikasi Kalkulator Dengan Tambahan Fitur Konversi Mata Uang, Tinggi Badan, Suhu, dan Kecepatan.
 
 ### PENDAHULUAN
