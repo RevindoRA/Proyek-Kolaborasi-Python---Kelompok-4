@@ -2,38 +2,21 @@
 
 ## 📊 Dokumentasi Teknis – Flowchart Sistem
 
-### Diagram Flowchart
-( START )
-   |
-   v
-[ Program Dijalankan ]
-   |
-   v
-[ Inisialisasi Aplikasi ]
-   |
-   v
-[ Membuat Window dan Tab Fitur ]
-   |
-   v
-/ User Memilih Fitur /
-   |
-   v
-/ User Memasukkan Data /
-   |
-   v
-[ Proses Perhitungan / Konversi ]
-   |
-   v
-/ Menampilkan Hasil /
-   |
-   v
-◇ Lanjut menggunakan aplikasi? ◇
-   |              |
-  Ya            Tidak
-   |              |
-   v              v
-[ Kembali ke   ( END )
-  Pilih Fitur ]
+## Diagram Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[Program Dijalankan]
+    B --> C[Inisialisasi Aplikasi]
+    C --> D[Membuat Window & Tab Fitur]
+    D --> E[User Memilih Fitur]
+    E --> F[User Memasukkan Data]
+    F --> G[Proses Perhitungan / Konversi]
+    G --> H[Menampilkan Hasil]
+    H --> I{Lanjut menggunakan aplikasi?}
+    I -- Ya --> E
+    I -- Tidak --> J([End])
+
 
 ### Penjelasan Flowchart
 
