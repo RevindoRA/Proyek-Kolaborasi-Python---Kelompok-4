@@ -7,7 +7,7 @@
 ### Judul Program
 Aplikasi Kalkulator Dengan Tambahan Fitur Konversi Mata Uang, Tinggi Badan, Suhu, dan Kecepatan.
 
-### Pendahuluan
+### PENDAHULUAN
 Aplikasi ini merupakan program **kalkulator sederhana** yang dikembangkan sebagai tugas proyek kelompok.  
 Selain operasi aritmatika dasar, aplikasi ini dilengkapi dengan fitur **konversi satuan**, meliputi:
 - Mata Uang
