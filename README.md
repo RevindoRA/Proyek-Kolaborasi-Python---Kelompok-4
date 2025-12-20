@@ -4,6 +4,44 @@
 
 ### Diagram Flowchart
 
+### Judul Program
+Aplikasi Kalkulator Dengan Tambahan Fitur Konversi Mata Uang, Tinggi Badan, Suhu, dan Kecepatan.
+
+### Pendahuluan
+Aplikasi ini merupakan program **kalkulator sederhana** yang dikembangkan sebagai tugas proyek kelompok.  
+Selain operasi aritmatika dasar, aplikasi ini dilengkapi dengan fitur **konversi satuan**, meliputi:
+- Mata Uang
+- Tinggi Badan
+- Suhu
+- Kecepatan
+
+Aplikasi ini bertujuan untuk memudahkan pengguna dalam melakukan perhitungan dan konversi mata uang, tinggi badan, suhu, dan kecepatan secara cepat dan praktis.
+
+### Fitur Utama
+Aplikasi ini memiliki fitur utama yaitu:
+1. Operasi matematika dasar:
+   - Penjumlahan
+   - Pengurangan
+   - Perkalian
+   - Pembagian
+2. Konversi mata uang (contoh: IDR ↔ USD)
+3. Konversi tinggi badan (cm ↔ m)
+4. Konversi suhu (Celcius ↔ Fahrenheit ↔ Kelvin)
+5. Konversi kecepatan (km/jam ↔ m/detik)
+
+### Panduan Instalasi
+1. Pastikan Git, VS Code, dan Python sudah terinstal
+2. Masuk di Github dan clone repository:
+   ```bash
+   git clone https://github.com/username/nama-repo.git
+3. Masuk ke folder proyek: Proyek-Kolaborasi-Python---Kelompok-4
+
+### Panduan Menjalankan 
+1. Buka folder proyek (codingannya)
+2. Jalankan program dengan perintah: python app.py
+3. Ikuti menu yang tersedia untuk memilih fitur kalkulator atau konversi satuan yang tersedia.
+
+### Dokumentasi Teknis
 ```mermaid
 flowchart TD
     A([Start]) --> B[Program Dijalankan]
