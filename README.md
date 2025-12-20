@@ -26,16 +26,26 @@ Aplikasi ini memiliki fitur utama yaitu:
 5. Konversi kecepatan (km/jam ↔ m/detik)
 
 ## PANDUAN INSTALASI
-1. Pastikan Git, VS Code, dan Python sudah terinstal
-2. Masuk di Github dan clone repository:
+1. Pastikan Git, VS Code, dan Python 3.x sudah terinstal
+2. Clone repository proyek:
    ```bash
    git clone https://github.com/RevindoRA/Proyek-Kolaborasi-Python---Kelompok-4
-3. Masuk ke folder proyek: Proyek-Kolaborasi-Python---Kelompok-4
+3. Masuk ke folder proyek: cd Proyek-Kolaborasi-Python---Kelompok-4
+4. Tidak diperlukan instalasi library tambahan karena aplikasi menggunakan library bawaan Python    (Tkinter)
 
 ## PANDUAN MENJALANKAN PROGRAM 
-1. Buka folder proyek (codingannya)
-2. Jalankan program dengan perintah: python app.py
-3. Ikuti menu yang tersedia untuk memilih fitur kalkulator atau konversi satuan yang tersedia.
+1. Buka terminal / command prompt.
+2. Masuk ke folder proyek.
+3. Jalankan program dengan perintah:
+   ```bash
+   python aplikasi_kalkulator_serbaguna.py
+4. Jendela Aplikasi Serba Guna akan muncul.
+5. Pilih tab sesuai kebutuhan:
+   -Kalkulator
+   -Mata Uang
+   -Tinggi Badan
+   -Suhu
+   -Kecepatan
 
 ## Dokumentasi Teknis – Flowchart Sistem
 
