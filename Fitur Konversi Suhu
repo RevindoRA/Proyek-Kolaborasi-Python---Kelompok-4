@@ -32,3 +32,28 @@
         self.temp_result = tk.StringVar()
         ttk.Label(frame, textvariable=self.temp_result, font=("Arial", 14)).pack(pady=10)
 
+    def convert_temperature(self):
+        try:
+            value = float(self.temp_value.get())
+            from_u = self.from_unit.get()
+            to_u = self.to_unit.get()
+
+            if from_u == "Fahrenheit":
+                c = (value - 32) * 5 / 9
+            elif from_u == "Kelvin":
+                c = value - 273.15
+            else:
+                c = value
+
+            if to_u == "Fahrenheit":
+                result = (c * 9 / 5) + 32
+            elif to_u == "Kelvin":
+                result = c + 273.15
+            else:
+                result = c
+
+            self.temp_result.set(f"Hasil: {result:.2f} {to_u}")
+
+        except ValueError:
+            messagebox.showerror("Error", "Masukkan angka yang valid")
+
