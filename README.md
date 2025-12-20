@@ -29,7 +29,7 @@ Aplikasi ini memiliki fitur utama yaitu:
 4. Konversi suhu (Celcius ↔ Fahrenheit ↔ Kelvin)
 5. Konversi kecepatan (km/jam ↔ m/detik)
 
-### Panduan Instalasi
+### PANDUAN INSTALASI
 1. Pastikan Git, VS Code, dan Python sudah terinstal
 2. Masuk di Github dan clone repository:
    ```bash
