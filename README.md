@@ -36,7 +36,7 @@ Aplikasi ini memiliki fitur utama yaitu:
    git clone https://github.com/username/nama-repo.git
 3. Masuk ke folder proyek: Proyek-Kolaborasi-Python---Kelompok-4
 
-### Panduan Menjalankan 
+### PANDUAN MENJALANKAN PROGRAM 
 1. Buka folder proyek (codingannya)
 2. Jalankan program dengan perintah: python app.py
 3. Ikuti menu yang tersedia untuk memilih fitur kalkulator atau konversi satuan yang tersedia.
