@@ -17,7 +17,7 @@ Selain operasi aritmatika dasar, aplikasi ini dilengkapi dengan fitur **konversi
 
 Aplikasi ini bertujuan untuk memudahkan pengguna dalam melakukan perhitungan dan konversi mata uang, tinggi badan, suhu, dan kecepatan secara cepat dan praktis.
 
-### Fitur Utama
+### FITUR UTAMA
 Aplikasi ini memiliki fitur utama yaitu:
 1. Operasi matematika dasar:
    - Penjumlahan
