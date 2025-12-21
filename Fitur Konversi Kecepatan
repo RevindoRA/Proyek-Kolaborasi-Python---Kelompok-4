@@ -31,3 +31,29 @@
 
         self.speed_result = tk.StringVar()
         ttk.Label(frame, textvariable=self.speed_result, font=("Arial", 12)).pack(pady=10)
+
+    def convert_speed(self):
+        try:
+            value = float(self.speed_value.get())
+            from_u = self.speed_from.get()
+            to_u = self.speed_to.get()
+
+            if from_u == "km/jam":
+                ms = value / 3.6
+            elif from_u == "mph":
+                ms = value * 0.44704
+            else:
+                ms = value
+
+            if to_u == "km/jam":
+                result = ms * 3.6
+            elif to_u == "mph":
+                result = ms / 0.44704
+            else:
+                result = ms
+
+            self.speed_result.set(f"Hasil: {result:.2f} {to_u}")
+
+        except ValueError:
+            messagebox.showerror("Error", "Masukkan angka yang valid")
+
