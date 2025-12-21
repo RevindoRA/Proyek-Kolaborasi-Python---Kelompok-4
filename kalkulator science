@@ -1,0 +1,121 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+import sympy as sp
+from sympy.parsing.sympy_parser import (
+    parse_expr,
+    standard_transformations,
+    implicit_multiplication_application
+)
+
+# ================= SYMPY SETUP =================
+x = sp.symbols('x')
+transformations = standard_transformations + (
+    implicit_multiplication_application,
+)
+
+def parse(expr):
+    return parse_expr(expr, transformations=transformations)
+
+# ================= APP =================
+class ScientificCalculator(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Kalkulator Scientific")
+        self.geometry("420x650")
+        self.resizable(False, False)
+        self.create_ui()
+
+    def create_ui(self):
+        self.display = tk.StringVar()
+
+        entry = ttk.Entry(
+            self, textvariable=self.display,
+            font=("Arial", 20), justify="right"
+        )
+        entry.pack(fill="x", padx=10, pady=10, ipady=8)
+
+        limit_frame = ttk.Frame(self)
+        limit_frame.pack()
+        ttk.Label(limit_frame, text="Limit x →").pack(side="left")
+        self.limit_val = ttk.Entry(limit_frame, width=6)
+        self.limit_val.pack(side="left")
+        self.limit_val.insert(0, "0")
+
+        frame = ttk.Frame(self)
+        frame.pack(expand=True, fill="both", padx=5, pady=5)
+
+        buttons = [
+            ["7", "8", "9", "/"],
+            ["4", "5", "6", "*"],
+            ["1", "2", "3", "-"],
+            ["0", ".", "(", ")"],
+            ["sin(", "cos(", "tan(", "+"],
+            ["d/dx", "∫", "limit", "ln("],
+            ["C", "=", "π", "log("]
+        ]
+
+        for r, row in enumerate(buttons):
+            for c, text in enumerate(row):
+                ttk.Button(
+                    frame, text=text,
+                    command=lambda t=text: self.on_click(t)
+                ).grid(row=r, column=c, sticky="nsew", padx=3, pady=3)
+
+        for i in range(7):
+            frame.rowconfigure(i, weight=1)
+        for j in range(5):
+            frame.columnconfigure(j, weight=1)
+
+    # ================= BUTTON ACTION =================
+    def on_click(self, char):
+        if char == "=":
+            self.calculate()
+        elif char == "C":
+            self.display.set("")
+        elif char == "d/dx":
+            self.derivative()
+        elif char == "∫":
+            self.integral()
+        elif char == "limit":
+            self.limit()
+        else:
+            self.display.set(self.display.get() + char)
+
+    # ================= OPERATIONS =================
+    def calculate(self):
+        try:
+            expr = parse(self.display.get())
+            result = expr.evalf()
+            self.display.set(result)
+        except:
+            messagebox.showerror("Error", "Ekspresi tidak valid")
+
+    def derivative(self):
+        try:
+            expr = parse(self.display.get())
+            result = sp.diff(expr, x)
+            self.display.set(result)
+        except:
+            messagebox.showerror("Error", "Turunan gagal")
+
+    def integral(self):
+        try:
+            expr = parse(self.display.get())
+            result = sp.integrate(expr, x)
+            self.display.set(result)
+        except:
+            messagebox.showerror("Error", "Integral gagal")
+
+    def limit(self):
+        try:
+            expr = parse(self.display.get())
+            a = parse(self.limit_val.get())
+            result = sp.limit(expr, x, a)
+            self.display.set(result)
+        except:
+            messagebox.showerror("Error", "Limit gagal")
+
+# ================= RUN =================
+if __name__ == "__main__":
+    app = ScientificCalculator()
+    app.mainloop()
